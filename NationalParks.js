@@ -286,7 +286,11 @@ function searchForParks(state, name, keyword) {
             ],
             "columnDefs": [
                 { 
-                    "orderable": false, // disable sorting on 4th column
+                    "orderable": false, // disable sorting on directions column
+                    "targets": 2
+                },
+                { 
+                    "orderable": false, // disable sorting on buttons column
                     "targets": 3
                 }
             ],
