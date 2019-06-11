@@ -248,12 +248,11 @@ function searchForParks(state, name, keyword) {
             "columns": [
                 { "data": "fullName" },
                 { "data": "designation" },
-                { 
-                    "data": "directionsUrl",
+                { "data": "directionsUrl",
                     // render as hyperlink
                     "render": function(data, type, row, meta) {
                         if (type === 'display')
-                            data = '<a href="' + data + '" target="_blank">' + "Link" + '</a>';
+                            data = '<a href="' + data + '" target="_blank">' + "Directions" + '</a>';
                         return data;
                     }
                 },
