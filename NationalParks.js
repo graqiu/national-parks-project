@@ -252,7 +252,7 @@ function searchForParks(state, name, keyword) {
                     // render as hyperlink
                     "render": function(data, type, row, meta) {
                         if (type === 'display')
-                            data = '<a href="' + data + '" target="_blank">' + "Directions" + '</a>';
+                            data = '<a href="' + data + '" target="_blank">' + "Plan Your Visit" + '</a>';
                         return data;
                     }
                 },
