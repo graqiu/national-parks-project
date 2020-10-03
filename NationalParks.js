@@ -214,19 +214,19 @@ function getLessons(parkCode) {
 
 function searchForParks(state, name, keyword) {
     clearMoreInfo();
+    const keywordParam = (keyword == null || keyword.length == 0) ? "" : "&q=" + keyword;
     
     const settings = {
-        "url": baseUrl + "/parks?api_key=" + apiKey + "&stateCode=" + state + "&q=" + keyword,
+        "url": baseUrl + "/parks?api_key=" + apiKey + "&stateCode=" + state + keywordParam,
         "type": "GET"
     }
     
     $.ajax(settings).done(function (response) {
-        const refinedName = name.trim(); // remove leading and trailing spaces
         var parkData;
-        if (refinedName.length > 0) {
+        if (name.length > 0) {
             parkData = [];
             for (var i = 0; i < response.data.length; i++) {
-                if (response.data[i].fullName.toUpperCase().includes(refinedName.toUpperCase()))
+                if (response.data[i].fullName.toUpperCase().includes(name.toUpperCase()))
                     parkData.push(response.data[i]);
             }
         }
